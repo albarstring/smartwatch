@@ -1,5 +1,6 @@
 @extends('layout.app')
 
+
 @section('content')
 <!-- HERO SECTION -->
 <section class="bg-white flex relative z-20 items-center overflow-hidden">
@@ -47,12 +48,13 @@
         <div class="flex justify-center">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-14">
                 @for ($i = 0; $i < 8; $i++)
-                    @include('components.productcard', [ 'image'=> 'https://www.tailwind-kit.com/images/object/10.png',
-                    'title' => 'Apple Watch Series ' . ($i + 1),
-                    'description' => 'Jam olahraga dan bertualang paling andal.',
-                    'price' => '20.000',
-                    'original' => '29.999'
-                    ])
+                    @include('components.productcard', [
+        'image' => 'https://www.tailwind-kit.com/images/object/10.png',
+        'title' => 'Apple Watch Series ' . ($i + 1),
+        'description' => 'Jam olahraga dan bertualang paling andal.',
+        'price' => '20.000',
+        'original' => '29.999'
+    ])
                     @endfor
             </div>
         </div>

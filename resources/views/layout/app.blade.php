@@ -1,8 +1,10 @@
+<!-- filepath: c:\~Amikom~\Semester 4\#WebSmartWatch\resources\views\layout\app.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {{-- External CSS --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
@@ -15,7 +17,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-
 <body>
     <main class="bg-white relative overflow-hidden min-h-screen">
         <!-- NAVBAR -->
@@ -24,14 +25,14 @@
                 <div class="flex items-center space-x-2">
                     <img src="https://mcqmate.com/public/images/logos/60x60.png" alt="logo" class="w-10 h-10">
                     <div class="uppercase text-black font-black text-3xl">
-                        <a href="#">Mybest</a>
+                        <a href="{{ route('home') }}">Mybest</a>
                     </div>
                 </div>
 
                 <div class="flex items-center space-x-6">
                     <!-- Desktop Menu -->
                     <div class="hidden lg:flex font-sen text-black text-lg space-x-4">
-                        <a href="#" class="relative py-2 px-4 group">
+                        <a href="{{ route('home') }}" class="relative py-2 px-4 group">
                             Home
                             <span class="absolute left-0 bottom-0 h-0.5 w-full bg-black scale-x-0 origin-center transition-transform duration-300 group-hover:scale-x-100"></span>
                         </a>
@@ -43,9 +44,8 @@
                             Product
                             <span class="absolute left-0 bottom-0 h-0.5 w-full bg-black scale-x-0 origin-center transition-transform duration-300 group-hover:scale-x-100"></span>
                         </a>
-                        <a href="#" class="relative py-2 px-4 group">
-                            Contact
-                            <span class="absolute left-0 bottom-0 h-0.5 w-full bg-black scale-x-0 origin-center transition-transform duration-300 group-hover:scale-x-100"></span>
+                        <a href="{{ route('contact') }}" class="uppercase py-2 px-4 rounded-lg bg-pink-500 border-2 border-transparent text-white text-md mr-4 hover:bg-pink-400">
+                            Contact Us
                         </a>
                         <a href="#" class="relative py-2 px-4 group">
                             Career
@@ -54,45 +54,41 @@
                     </div>
                 </div>
 
-
                 <!-- Login/Register Buttons (Desktop) -->
                 <div class="hidden lg:flex space-x-4">
-                    <a href="/login" class="px-4 py-2 border border-black text-black rounded hover:bg-gray-200 transition">Login</a>
-                    <a href="/register" class="px-4 py-2 bg-black text-white rounded hover:bg-gray-700 transition">Register</a>
+                    <a href="{{ route('login') }}" class="px-4 py-2 border border-black text-black rounded hover:bg-gray-200 transition">Login</a>
+                    <a href="{{ route('register') }}" class="px-4 py-2 bg-black text-white rounded hover:bg-gray-700 transition">Register</a>
                 </div>
 
                 <!-- Hamburger Button (Mobile) -->
                 <button id="menu-toggle" class="lg:hidden text-black focus:outline-none z-50">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2"
-                        viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
-            </div>
 
             <!-- Mobile Menu -->
-            <div id="mobile-menu"
-                class="absolute top-full left-0 w-full bg-white shadow-lg overflow-hidden max-h-0 transition-[max-height] duration-500 ease-in-out lg:hidden z-40">
+            <div id="mobile-menu" class="absolute top-full left-0 w-full bg-white shadow-lg overflow-hidden max-h-0 transition-[max-height] duration-500 ease-in-out lg:hidden z-40">
                 <div class="flex flex-col items-start px-6 py-4 space-y-2">
-                    <a href="#" class="text-black py-2">Home</a>
+                    <a href="{{ route('home') }}" class="text-black py-2">Home</a>
                     <a href="#" class="text-black py-2">Watch</a>
                     <a href="#" class="text-black py-2">Product</a>
-                    <a href="#" class="text-black py-2">Contact</a>
+                    <a href="{{ route('contact') }}" class="uppercase py-2 px-4 rounded-lg bg-pink-500 border-2 border-transparent text-white text-md mr-4 hover:bg-pink-400">
+                        Contact Us
+                    </a>
                     <a href="#" class="text-black py-2">Career</a>
                     <div class="flex space-x-4 py-2">
-                        <a href="/login" class="px-4 py-2 border border-black text-black rounded hover:bg-gray-200 transition">Login</a>
-                        <a href="/register" class="px-4 py-2 bg-black text-white rounded hover:bg-gray-700 transition">Register</a>
+                        <a href="{{ route('login') }}" class="px-4 py-2 border border-black text-black rounded hover:bg-gray-200 transition">Login</a>
+                        <a href="{{ route('register') }}" class="px-4 py-2 bg-black text-white rounded hover:bg-gray-700 transition">Register</a>
                     </div>
                 </div>
             </div>
         </nav>
 
-
-
-        <!-- Konten dinamis -->
+        <!-- Konten Dinamis -->
         <main>
-            @yield ('content')
+            @yield('content')
         </main>
 
         <!-- FOOTER -->
@@ -112,73 +108,27 @@
                         </p>
                     </div>
                 </div>
-
-                <div class="flex flex-col gap-2 text-sm">
-                    <p class="text-base font-bold tracking-wide text-white-900">Popular Courses</p>
-                    <a href="#">UPSC - Union Public Service Commission</a>
-                    <a href="#">General Knowledge</a>
-                    <a href="#">MBA</a>
-                    <p class="text-base font-bold tracking-wide text-white-900">Popular Topics</p>
-                    <a href="#">Human Resource Management</a>
-                    <a href="#">Operations Management</a>
-                    <a href="#">Marketing Management</a>
-                </div>
-
-                <div>
-                    <p class="text-base font-bold tracking-wide text-white-900">COMPANY IS ALSO AVAILABLE ON</p>
-                    <div class="flex items-center gap-1 px-2">
-                        <a href="#" class="w-full min-w-xl">
-                            <img src="https://mcqmate.com/public/images/icons/playstore.svg" alt="Playstore Button" class="h-10">
-                        </a>
-                        <a class="w-full min-w-xl" href="https://www.youtube.com/channel/UCo8tEi6SrGFP8XG9O0ljFgA">
-                            <img src="https://mcqmate.com/public/images/icons/youtube.svg" alt="Youtube Button" class="h-28">
-                        </a>
-                    </div>
-                    <p class="text-base font-bold tracking-wide text-white-900">Contacts</p>
-                    <div class="flex">
-                        <p class="mr-1 text-white-800">Email:</p>
-                        <a href="mailto:Albarnaga123@gmail.com" title="send email">Albarnaga123@gmail.com</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
-                <p class="text-sm text-gray-600">© Copyright 2025 Company. All rights reserved.</p>
-                <ul class="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
-                    <li><a href="#" class="text-sm text-gray-600 hover:text-deep-purple-accent-400">Privacy & Cookies Policy</a></li>
-                    <li><a href="#" class="text-sm text-gray-600 hover:text-deep-purple-accent-400">Disclaimer</a></li>
-                </ul>
             </div>
         </footer>
     </main>
 
-    <!--Humberger JS-->
+    <!-- Hamburger JS -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const toggleButton = document.getElementById('menu-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            if (!toggleButton || !mobileMenu) {
-                console.error('Menu toggle button or mobile menu not found!');
-                return;
-            }
-
-            mobileMenu.classList.add('max-h-0');
-
-            toggleButton.addEventListener('click', function() {
+            toggleButton.addEventListener('click', function () {
                 if (mobileMenu.classList.contains('max-h-0')) {
-                    // Open the menu
                     mobileMenu.classList.remove('max-h-0');
                     mobileMenu.classList.add('max-h-96');
                 } else {
-                    // Close the menu
                     mobileMenu.classList.remove('max-h-96');
                     mobileMenu.classList.add('max-h-0');
                 }
             });
         });
     </script>
-
 </body>
 
 </html>
