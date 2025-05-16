@@ -134,13 +134,11 @@
             });
         });
     </script>
-<<<<<<< HEAD
-=======
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
->>>>>>> 5f7bce886816a65bfe7eab539706500a96c438fe
 </body>
 
 </html>
