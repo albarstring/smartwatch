@@ -46,3 +46,24 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+
+    $(document).ready(function() {
+    const owl1 = $("#owl-carousel-1");
+
+    owl1.owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: false,  // kita pakai tombol custom
+        dots: false,
+        items: 1
+    });
+
+    $("#btnNext").click(function() {
+        owl1.trigger('next.owl.carousel');
+    });
+
+    $("#btnPrev").click(function() {
+        owl1.trigger('prev.owl.carousel');
+    });
+});
+

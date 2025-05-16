@@ -21,7 +21,7 @@
                 </a>
                 <a href="#"
                     class="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-pink-500 text-pink-500 dark:text-pink hover:bg-pink-500 hover:text-white text-md">
-                    Read more
+                    Read more (test)
                 </a>
             </div>
         </div>
@@ -35,12 +35,51 @@
     </div>
 </section>
 
-<!-- Teks Produk Terbaru -->
-<section class="bg-white text-gray-800 py-1 flex justify-center items-center pt-5">
-    <div class="grid grid-row-1 p-8 gap-2 text-center gap-1">
-        <h1 class="text-4xl font-bold text-black-500 mb-1">Produk Terbaru</h1>
+<!-- Card Slider -->
+<section class="relative bg-gradient-to-r from-black via-gray-700 to-white-900 py-10 px-10">
+    <!-- Tombol panah custom -->
+    <div class="custom-nav-btn left absolute top-1/2 left-0 z-10 -translate-y-1/2 cursor-pointer px-3 py-2" id="btnPrev">
+        <i class='bx bx-chevron-left text-3xl text-gray-700'></i>
+    </div>
+    <div class="custom-nav-btn right absolute top-1/2 right-0 z-10 -translate-y-1/2 cursor-pointer px-3 py-2" id="btnNext">
+        <i class='bx bx-chevron-right text-3xl text-gray-700'></i>
+    </div>
+
+    <!-- Carousel container -->
+    <div id="owl-carousel-1" class="owl-carousel owl-theme">
+        @for ($i = 0; $i < 30; $i += 5)
+            <div class="item grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 px-4 overflow-hidden">
+            @for ($j = $i; $j < $i + 5 && $j < 30; $j++)
+                <a href="/produk/{{ $j }}" class="block">
+                <div class="bg-orange-500 rounded-lg overflow-hidden shadow-lg group relative h-full transition duration-300 hover:shadow-2xl">
+                    <svg class="absolute bottom-0 left-0 mb-8 scale-150 transition-transform duration-300 ease-in-out group-hover:scale-90" viewBox="0 0 375 283" fill="none" style="opacity: 0.1;">
+                        <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)" fill="white" />
+                        <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white" />
+                    </svg>
+                    <div class="relative pt-10 px-6 flex items-center justify-center transition-transform duration-300 ease-in-out group-hover:scale-90">
+                        <img class="relative w-24" src="https://user-images.githubusercontent.com/2805249/64069899-8bdaa180-cc97-11e9-9b19-1a9e1a254c18.png" alt="">
+                    </div>
+                    <div class="relative text-white px-4 pb-4 mt-4 transition-transform duration-300 ease-in-out group-hover:scale-90">
+                        <span class="block opacity-75 text-sm -mb-1">Outdoor</span>
+                        <div class="flex justify-between">
+                            <span class="block font-semibold text-base">Plant {{ $j + 1 }}</span>
+                            <span class="bg-white rounded-full text-orange-500 text-xs font-bold px-2 py-1">Rp 68.000</span>
+                        </div>
+                    </div>
+                </div>
+                </a>
+                @endfor
+    </div>
+    @endfor
     </div>
 </section>
+
+<!-- Teks Produk Terbaru -->
+<div class="flex justify-center">
+    <div>
+        <h1 class="text-3xl font-bold">Produk terbaru</h1>
+    </div>
+</div>
 
 <!-- Card Produk Terbaru -->
 <section class="bg-white py-10">
