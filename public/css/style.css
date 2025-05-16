@@ -1,0 +1,10 @@
+.custom-nav-btn {
+    background-color: white;
+    border-radius: 9999px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+.custom-nav-btn:hover {
+    background-color: #f97316; /* Tailwind orange-500 */
+    color: white;
+}
