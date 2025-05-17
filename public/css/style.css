@@ -8,3 +8,68 @@
     background-color: #f97316; /* Tailwind orange-500 */
     color: white;
 }
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, #5046e5 0%, #ff6b6b 100%);
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-gradient {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+}
+
+.logo-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-shine::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) rotate(30deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(30deg);
+    }
+}
+
+.mobile-menu-transition {
+    transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+}

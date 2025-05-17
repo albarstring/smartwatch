@@ -67,3 +67,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#5046E5',
+                        'primary-dark': '#4038C7',
+                        'secondary': '#FF6B6B',
+                        'secondary-dark': '#FF5252',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }

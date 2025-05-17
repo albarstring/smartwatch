@@ -110,8 +110,6 @@
     {{-- isi dari contact kalau jadi --}}
     
 
-
-
     {{-- isi dari career ✅--}}
     <section class="bg-gradient-to-br from-pink-50 via-orange-50 to-white min-h-screen py-16">
         <div class="container mx-auto px-6">
