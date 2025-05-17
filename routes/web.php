@@ -18,5 +18,9 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/contact', function () {
-    return view('contact.index'); // Mengarah ke folder contact dan file index.blade.php
+    return view('contact.contact');
 })->name('contact');
+
+Route::get('/career', function () {
+    return view('career.Career');
+})->name('career');

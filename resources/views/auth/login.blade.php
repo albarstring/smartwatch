@@ -9,7 +9,7 @@
                     <dotlottie-player 
                         src="https://lottie.host/1f6ae326-a0a4-45d1-bb2f-c45d5fbfacaf/WoMz793CgV.lottie" 
                         background="transparent" 
-                        speed="0.6"
+                        speed="0.4"
                         loop 
                         autoplay
                         class="w-full h-auto">
@@ -17,8 +17,8 @@
                 </div>
             </div>
 
-            <!-- Login Form -->
-            <div class="w-full lg:w-1/2">
+            <!-- Login Form - Adjusted for better symmetry -->
+            <div class="w-full lg:w-1/2 flex justify-end">
                 <div class="border border-gray-200 rounded-3xl p-10 w-full max-w-md shadow-xl bg-white/90 backdrop-blur-sm hover:backdrop-blur transition-all duration-300 hover:shadow-2xl">
                     <div class="text-center mb-8">
                         <h2 class="text-4xl font-extrabold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-pink-500 tracking-tight">
@@ -101,3 +101,11 @@
     <!-- LottieFiles CDN -->
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 @endsection
+
+    @section('scripts')
+        <script>
+            // Initialize the DotLottie player
+            const player = document.querySelector('dotlottie-player');
+            player.play();
+        </script>
+    @endsection
